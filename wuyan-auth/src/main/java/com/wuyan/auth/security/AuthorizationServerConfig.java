@@ -4,6 +4,7 @@
 
 package com.wuyan.auth.security;
 
+import com.wuyan.auth.application.WuYanClientDetailsService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
  * @author wangguodong
- * @since 2021/8/20
+ * @since v1
  */
 @Configuration
 @AllArgsConstructor
@@ -72,7 +73,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		// 授权码  账号密码模式
 		endpoints.authenticationManager(authenticationManager)
-				.tokenServices(tokenServices());
+				.tokenServices(tokenServices())
+				.setClientDetailsService(clientDetailsService());
+	}
+
+	@Bean
+	ClientDetailsService clientDetailsService() {
+		return new WuYanClientDetailsService();
 	}
 
 	@Bean
