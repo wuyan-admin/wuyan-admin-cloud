@@ -4,17 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.wuyan</groupId>
-        <artifactId>wuyan-admin-cloud</artifactId>
-        <version>${revision}</version>
+        <artifactId>wuyan-cloud</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.wuyan</groupId>
-    <artifactId>admin-gateway</artifactId>
-    <name>admin-gateway</name>
-    <description>Demo project for Spring Boot</description>
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>2020.0.3</spring-cloud.version>
-    </properties>
+    <artifactId>wuyan-gateway</artifactId>
+    <name>wuyan-gateway</name>
+    <description>网关</description>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -22,27 +18,11 @@
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>

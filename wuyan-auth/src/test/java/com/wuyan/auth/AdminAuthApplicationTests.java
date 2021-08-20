@@ -1,10 +1,10 @@
-package com.wuyan.admin.gateway;
+package com.wuyan.auth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AdminGatewayApplicationTests {
+class AdminAuthApplicationTests {
 
 	@Test
 	void contextLoads() {

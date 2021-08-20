@@ -1,13 +1,13 @@
-package com.wuyan.admin.gateway;
+package com.wuyan.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AdminGatewayApplication {
+public class AdminAuthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AdminGatewayApplication.class, args);
+		SpringApplication.run(AdminAuthApplication.class, args);
 	}
 
 }
