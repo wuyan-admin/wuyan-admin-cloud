@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -33,15 +32,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	private final TokenStore tokenStore;
 
-	private final ClientDetailsService clientDetailsService;
-
 	private final AuthenticationManager authenticationManager;
 
-	// 保存token
 	@Bean
 	AuthorizationServerTokenServices tokenServices() {
 		DefaultTokenServices services = new DefaultTokenServices();
-		services.setClientDetailsService(clientDetailsService);
 		services.setSupportRefreshToken(true);
 		services.setTokenStore(tokenStore);
 		services.setAccessTokenValiditySeconds(60 * 60 * 2);
@@ -59,26 +54,18 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory()
-				.withClient("javaboy")
-				.secret(new BCryptPasswordEncoder().encode("123"))
-				.resourceIds("res1")
-				.authorizedGrantTypes("authorization_code", "refresh_token", "implicit", "password", "client_credentials")
-				.scopes("all")
-				.autoApprove(true)
-				.redirectUris("http://localhost:8082/index.html", "http://localhost:8082/simple-index.html");
+		clients.withClientDetails(wuYanClientDetailsService());
 	}
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		// 授权码  账号密码模式
 		endpoints.authenticationManager(authenticationManager)
-				.tokenServices(tokenServices())
-				.setClientDetailsService(clientDetailsService());
+				.tokenServices(tokenServices());
 	}
 
 	@Bean
-	ClientDetailsService clientDetailsService() {
+	ClientDetailsService wuYanClientDetailsService() {
 		return new WuYanClientDetailsService();
 	}
 
