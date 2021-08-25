@@ -4,7 +4,7 @@
 
 package com.wuyan.auth.security;
 
-import com.wuyan.auth.application.WuYanClientDetailsService;
+import com.wuyan.auth.security.service.WuYanClientDetailsService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,11 @@ import org.springframework.security.oauth2.provider.code.AuthorizationCodeServic
 import org.springframework.security.oauth2.provider.code.InMemoryAuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+import java.util.Arrays;
 
 /**
  * @author wangguodong
@@ -34,6 +38,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	private final AuthenticationManager authenticationManager;
 
+	private JwtAccessTokenConverter jwtAccessTokenConverter;
+
 	@Bean
 	AuthorizationServerTokenServices tokenServices() {
 		DefaultTokenServices services = new DefaultTokenServices();
@@ -41,6 +47,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		services.setTokenStore(tokenStore);
 		services.setAccessTokenValiditySeconds(60 * 60 * 2);
 		services.setRefreshTokenValiditySeconds(60 * 60 * 24 * 3);
+		TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+		// token增强 jwt
+		tokenEnhancerChain.setTokenEnhancers(Arrays.asList(jwtAccessTokenConverter));
+		services.setTokenEnhancer(tokenEnhancerChain);
 		return services;
 	}
 

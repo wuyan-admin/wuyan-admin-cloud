@@ -2,7 +2,7 @@
  * Copyright (c) 2021, wangguodong. All rights reserved.
  */
 
-package com.wuyan.auth.application;
+package com.wuyan.auth.security.service;
 
 import com.wuyan.auth.domain.entity.OauthClientDetails;
 import com.wuyan.auth.domain.service.impl.OauthClientDetailsServiceImpl;

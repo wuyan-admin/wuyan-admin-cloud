@@ -2,7 +2,7 @@
  * Copyright (c) 2021, wangguodong. All rights reserved.
  */
 
-package com.wuyan.auth.application;
+package com.wuyan.auth.security.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsPasswordService;
