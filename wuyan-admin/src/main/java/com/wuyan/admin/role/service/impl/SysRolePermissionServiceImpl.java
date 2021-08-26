@@ -5,10 +5,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wuyan.admin.role.entity.SysRolePermission;
 import com.wuyan.admin.role.mapper.SysRolePermissionMapper;
 import com.wuyan.admin.role.service.SysRolePermissionService;
-import enums.AssertEnum;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+import wuyan.common.enums.AssertEnum;
 
 import java.util.List;
 

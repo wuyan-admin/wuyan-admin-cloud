@@ -1,13 +1,13 @@
 package com.wuyan.admin.user.vo;
 
 
-import base.BaseQuery;
 import com.wuyan.admin.permission.vo.SysPermissionVo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import wuyan.common.base.BaseQuery;
 
 import java.util.List;
 

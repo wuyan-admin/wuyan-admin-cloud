@@ -1,11 +1,14 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://rm-m5e90k929g572chi5fo.mysql.rds.aliyuncs.com:3306/mysys?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
-    username: my_system
-    password: Wgg1940845501!
     hikari:
       minimum-idle: 1
+  profiles:
+    active: dev,discovery-dev
+  application:
+    name: wuyan-admin
+
+
+
 
 
 #mybatis

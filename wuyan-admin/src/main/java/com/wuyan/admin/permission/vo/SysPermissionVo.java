@@ -1,7 +1,6 @@
 package com.wuyan.admin.permission.vo;
 
 
-import base.BaseQuery;
 import cn.hutool.core.bean.BeanUtil;
 import com.wuyan.admin.permission.entity.SysPermission;
 import io.swagger.annotations.ApiModel;
@@ -9,6 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import wuyan.common.base.BaseQuery;
 
 import java.util.List;
 

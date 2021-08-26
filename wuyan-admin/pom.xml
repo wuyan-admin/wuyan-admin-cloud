@@ -47,8 +47,9 @@
 
         <dependency>
             <groupId>com.wuyan</groupId>
-            <artifactId>wuyan-common</artifactId>
+            <artifactId>common-all</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

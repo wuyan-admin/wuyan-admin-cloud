@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### log ###
+*.log
+/middleware/nacos/bin/work/
+/middleware/nacos/logs/

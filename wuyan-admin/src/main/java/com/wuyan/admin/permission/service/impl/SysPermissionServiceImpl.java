@@ -15,13 +15,13 @@ import com.wuyan.admin.role.service.SysRolePermissionService;
 import com.wuyan.admin.user.entity.SysUser;
 import com.wuyan.admin.user.entity.SysUserRole;
 import com.wuyan.admin.user.service.SysUserRoleService;
-import enums.AssertEnum;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
+import wuyan.common.enums.AssertEnum;
 
 import java.util.Comparator;
 import java.util.List;

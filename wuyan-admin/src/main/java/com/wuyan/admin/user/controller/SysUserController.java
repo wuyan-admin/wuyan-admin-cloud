@@ -72,4 +72,9 @@ public class SysUserController {
 		return sysUserService.update(sysUser);
 	}
 
+	@PostMapping("/getUserByAccount")
+	public SysUser getUserByAccount(String account) {
+		return sysUserService.getUserByAccount(account);
+	}
+
 }

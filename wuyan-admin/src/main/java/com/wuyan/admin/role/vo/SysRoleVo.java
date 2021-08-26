@@ -1,6 +1,5 @@
 package com.wuyan.admin.role.vo;
 
-import base.BaseQuery;
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,6 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import wuyan.common.base.BaseQuery;
 
 /**
  * <p>

@@ -10,12 +10,12 @@ import com.wuyan.admin.user.mapper.SysUserMapper;
 import com.wuyan.admin.user.service.SysUserRoleService;
 import com.wuyan.admin.user.service.SysUserService;
 import com.wuyan.admin.user.vo.SysUserVo;
-import enums.AssertEnum;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+import wuyan.common.enums.AssertEnum;
 
 /**
  * <p>

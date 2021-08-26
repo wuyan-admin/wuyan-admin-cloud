@@ -1,7 +1,6 @@
 package com.wuyan.admin.permission.controller;
 
 
-import base.BaseController;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.wuyan.admin.permission.entity.SysPermission;
 import com.wuyan.admin.permission.service.SysPermissionService;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import wuyan.common.base.BaseController;
 
 import java.util.List;
 

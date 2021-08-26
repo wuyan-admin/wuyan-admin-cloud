@@ -6,11 +6,11 @@ import com.wuyan.admin.user.entity.SysUserRole;
 import com.wuyan.admin.user.mapper.SysUserRoleMapper;
 import com.wuyan.admin.user.service.SysUserRoleService;
 import com.wuyan.admin.user.vo.SysUserRoleVo;
-import enums.AssertEnum;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+import wuyan.common.enums.AssertEnum;
 
 import java.util.List;
 import java.util.stream.Collectors;

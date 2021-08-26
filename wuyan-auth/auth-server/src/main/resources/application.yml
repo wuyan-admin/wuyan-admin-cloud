@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    hikari:
+      minimum-idle: 1
+  application:
+    name: wuyan-auth
+  profiles:
+    active: dev,discovery-dev
+
+
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:/mappings/**/*Mapper.xml
+  global-config:
+    # 数据库相关配置
+    db-config:
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+
